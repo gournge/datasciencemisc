@@ -23,38 +23,36 @@ where $n$ is the number of observations and $p < n$ is the number of coefficient
 - $Y$ is the dependent variable or response 
 - $X$ is the independent variable or predictor or feature
 
-$$2+2=4$$
-
 $$
   \begin{bmatrix}
-  y_1\\\
-  y_2\\\
-  \vdots\\\
+  y_1\\
+  y_2\\
+  \vdots\\
   y_n
   \end{bmatrix}
 
   = 
 
   \begin{bmatrix}
-  x_{1, 1} & x_{1, 2} & \ldots & x_{1, p} \\\
-  x_{2, 1} & \ddots & & \\\  
-  \vdots & & & \\\
-  x_{n, 1} & \ldots & & x_{n, p}\\\
+  x_{1, 1} & x_{1, 2} & \ldots & x_{1, p} \\
+  x_{2, 1} & \ddots & & \\  
+  \vdots & & & \\
+  x_{n, 1} & \ldots & & x_{n, p}\\
   \end{bmatrix}
 
   \begin{bmatrix}
-  b_1\\\
-  b_2\\\
-  \vdots\\\
+  b_1\\
+  b_2\\
+  \vdots\\
   b_p
   \end{bmatrix}
 
   + 
 
   \begin{bmatrix}
-  e_1\\\
-  e_2\\\
-  \vdots\\\
+  e_1\\
+  e_2\\
+  \vdots\\
   e_n
   \end{bmatrix}
 $$
@@ -71,9 +69,9 @@ where $e = Y - X\beta$. Let's examine the quantity $e^Te$:
 
 $$
 \begin{aligned}
-e^Te &= (Y - X\beta)^T(Y - X\beta) \\\ 
-     &= (Y^T - (X\beta)^T)(Y- X\beta)) \\\
-     &= (Y^T - \beta ^ T X^T)(Y- X\beta)) \\\
+e^Te &= (Y - X\beta)^T(Y - X\beta) \\ 
+     &= (Y^T - (X\beta)^T)(Y- X\beta)) \\
+     &= (Y^T - \beta ^ T X^T)(Y- X\beta)) \\
      &= Y^T Y - Y^T X \beta - \beta^T X^T Y  + \beta ^ T X^T X \beta 
 \end{aligned}
 $$
@@ -82,8 +80,8 @@ The optimum is a solution of
 
 $$
 \begin{aligned}
-0 = \frac{\partial (e^Te)}{\partial \beta} &= \frac{\partial (Y^T Y - Y^T X \beta - \beta^T X^T Y  + \beta ^ T X^T X \beta)} {\partial\beta} \\\
-                            &= -\frac{\partial (Y^T X \beta)}{\partial\beta} - \frac{\partial(\beta^T X^T Y )}{\partial\beta} + \frac{\partial(\beta ^ T X^T X \beta)}{\partial\beta} \\\
+0 = \frac{\partial (e^Te)}{\partial \beta} &= \frac{\partial (Y^T Y - Y^T X \beta - \beta^T X^T Y  + \beta ^ T X^T X \beta)} {\partial\beta} \\
+                            &= -\frac{\partial (Y^T X \beta)}{\partial\beta} - \frac{\partial(\beta^T X^T Y )}{\partial\beta} + \frac{\partial(\beta ^ T X^T X \beta)}{\partial\beta} \\
                             &= -2X^TY+2X^TX\beta
 \end{aligned}
 $$
@@ -102,10 +100,10 @@ Now why $\frac{\partial Y^TX\beta}{\partial \beta} = \frac{\partial \beta^T X^T 
       \begin{aligned}
       \frac{\partial y}{\partial X} &= 
         \begin{bmatrix}
-        \frac{\partial y}{\partial X_{1, 1}} & \frac{\partial y}{\partial X_{2, 1}} & \ldots & \frac{\partial y}{\partial X_{p, 1}} \\\
-        \frac{\partial y}{\partial X_{2, 1}} & \ddots & & \\\  
-        \vdots & & & \\\
-        \frac{\partial y}{\partial X_{1, q}} & \ldots & & \frac{\partial y}{\partial X_{q, p}}\\\
+        \frac{\partial y}{\partial X_{1, 1}} & \frac{\partial y}{\partial X_{2, 1}} & \ldots & \frac{\partial y}{\partial X_{p, 1}} \\
+        \frac{\partial y}{\partial X_{2, 1}} & \ddots & & \\  
+        \vdots & & & \\
+        \frac{\partial y}{\partial X_{1, q}} & \ldots & & \frac{\partial y}{\partial X_{q, p}}\\
         \end{bmatrix}
       \end{aligned}
       $$
@@ -117,10 +115,10 @@ Now why $\frac{\partial Y^TX\beta}{\partial \beta} = \frac{\partial \beta^T X^T 
       \begin{aligned}
       \frac{\partial y}{\partial X} &= 
         \begin{bmatrix}
-        \frac{\partial y}{\partial X_{1, 1}} & \frac{\partial y}{\partial X_{1, 2}} & \ldots & \frac{\partial y}{\partial X_{1, p}} \\\
-        \frac{\partial y}{\partial X_{2, 1}} & \ddots & & \\\  
-        \vdots & & & \\\
-        \frac{\partial y}{\partial X_{q, 1}} & \ldots & & \frac{\partial y}{\partial X_{p, q}}\\\
+        \frac{\partial y}{\partial X_{1, 1}} & \frac{\partial y}{\partial X_{1, 2}} & \ldots & \frac{\partial y}{\partial X_{1, p}} \\
+        \frac{\partial y}{\partial X_{2, 1}} & \ddots & & \\  
+        \vdots & & & \\
+        \frac{\partial y}{\partial X_{q, 1}} & \ldots & & \frac{\partial y}{\partial X_{p, q}}\\
         \end{bmatrix}
       \end{aligned}
       $$
@@ -129,7 +127,7 @@ Now why $\frac{\partial Y^TX\beta}{\partial \beta} = \frac{\partial \beta^T X^T 
   - Hence numerator notation can be seen as more intuitive (I have no idea why denominator notation was used here in Wikipedia)
 
 - Second, we can use the definition of differentiation of a matrix. 
-  - **Definition:** *[p.211 Rudin, 2024]*. Consider an open subset $E \subset \mathbf{R}^m, f : E \to \mathbf{R}^n$. $A \in \mathbf{R}^{m \times n}$ is said to be the derivative of $f$ at point $x \in \mathbf{R}^m$ iff $$ \lim_{h \to 0}{\frac{|f(x + h) - f(x) - Ah|}{|h|}} = 0\\\ $$ We denote that fact with $$ f^{\prime}(x) = A $$ Of course $h \in \mathbf{R}^m$.
+  - **Definition:** *[p.211 Rudin, 2024]*. Consider an open subset $E \subset \mathbf{R}^m, f : E \to \mathbf{R}^n$. $A \in \mathbf{R}^{m \times n}$ is said to be the derivative of $f$ at point $x \in \mathbf{R}^m$ iff $$ \lim_{h \to 0}{\frac{|f(x + h) - f(x) - Ah|}{|h|}} = 0\\ $$ We denote that fact with $$ f^{\prime}(x) = A $$ Of course $h \in \mathbf{R}^m$.
     - Rudin uses the numerator notation.
   - In the following remark, it is proved that $A = A^\prime (x) (= \frac{\partial (Ax)}{\partial x})$ using the fact that $A$ is a linear transformation: $$ \begin{aligned} \lim_{h \to 0}{\frac{|A(x + h) - A(x) - A(h)|}{|h|}} &= \lim_{h \to 0}{\frac{|A(x) + A(h) - A(x) - A(h)|}{|h|}} = 0 \end{aligned} $$ We have to note that the definition of $A$ as a matrix of real numbers and of $A$ as a linear transformation $A : \mathbf{R^m} \to \mathbf{R^n}$ is used here interchangeably and I have no idea if that is valid or problematic.
 - Finally, if in the numerator notation $\frac{\partial (Ax)}{\partial x} = A$, then in the denominator notation $\frac{\partial (Ax)}{\partial x} = A^T$, we can conclude that in denominator notation (one used in Wikipedia's page on Multiple Linear Regression):
@@ -138,15 +136,18 @@ Now why $\frac{\partial Y^TX\beta}{\partial \beta} = \frac{\partial \beta^T X^T 
       - Instead of direct computation, we could use the fact that $A, B$ are just matrices of some actual linear transformations $X \in \mathcal{L}(V, W), Y \in \mathcal{L}(W, U)$, i.e. $\mathcal{M}(X) = A, \mathcal{M}(Y) = B$. (the L notation represents the space of all linear transformations between two vector spaces.)
       - From Axler's LADR (and following his notation): $$\mathcal{M}(S^{\prime}) = \mathcal{M}(S)^T$$ for all linear transformations $S$. $S^{\prime}$ denotes the dual transformation to $S$; $S^{\prime}(\psi) = \psi \circ S, \psi \in \mathcal{L}(V, F)$. We write $V^{\prime} = \mathcal{L}(V, F)$, which is the *Dual Space* of so called *linear functionals* with regards to vector space $S$.
       - In this spirit, the dual to the composition of two linear transformations $X, Y$, for all linear functionals $\psi \in \mathcal{L}(U^{\prime}, V^{\prime})$ is $(XY)^{\prime} (\psi) = \psi \circ (XY) = (\psi \circ X) \circ Y  = Y ^ {\prime} (\psi \circ X) = (Y ^ {\prime} X ^ {\prime}) (\psi)$.
-      - We can represent this fact using matrix notation of these transformations: $$\begin{aligned} (AB)^T &= (\mathcal{M}(XY))^T = \mathcal{M}((XY)^{\prime}) = \mathcal{M}(Y^{\prime} X ^ {\prime}) = \mathcal{M}(Y ^ {\prime}) \mathcal{M}(X ^ {\prime}) \\\ &= (\mathcal{M}(Y))^T (\mathcal{M}(X))^T = B^T A^T \end{aligned}$$
+      - We can represent this fact using matrix notation of these transformations: $$\begin{aligned} (AB)^T &= (\mathcal{M}(XY))^T = \mathcal{M}((XY)^{\prime}) = \mathcal{M}(Y^{\prime} X ^ {\prime}) = \mathcal{M}(Y ^ {\prime}) \mathcal{M}(X ^ {\prime}) \\ &= (\mathcal{M}(Y))^T (\mathcal{M}(X))^T = B^T A^T \end{aligned}$$
       - Note: in between the lines we use the fact that $S \in \mathcal{L}(V, W) \implies S^{\prime} \in \mathcal{L}(W^{\prime}, V^{\prime})$ 
 
 Let's analyze the second term, $\frac{\partial(\beta ^ T X^T X \beta)}{\partial\beta}$:
 - Rudin 2024 proved the chain rule for $f : \mathbf{R}^m \to \mathbf{R}^n, g : \mathbf{R}^n \to \mathbf{R}^k$, with appropriate conditions similar to the original derivative definition displayed above. 
 - Let $f(t) = t ^ T t, \space g(t) = X t$ with $f : \mathbf{R}^{n \times 1} \to \mathbf{R}^{1 \times 1}, g : \mathbf{R}^{n \times 1} \to \mathbf{R}^{n \times 1}$ so $t \in \mathbf{R}^{n \times 1}$
-- We have $$\begin{aligned} \frac{\partial(\beta ^ T X^T X \beta)}{\partial\beta} = \frac{\partial(f(g(\beta)))}{\partial\beta} &= \frac{\partial(f(g(\beta)))}{\partial (g(\beta))} \frac{\partial(g(\beta))}{\partial\beta} \\\ &= () (X^T) \\\  \end{aligned}$$
-
-TODO: how to proceed with the derivative?
+- We have $$\begin{aligned} \frac{\partial(\beta ^ T X^T X \beta)}{\partial\beta} = \frac{\partial(f(g(\beta)))}{\partial\beta} &= \frac{\partial(f(g(\beta)))}{\partial (g(\beta))} \frac{\partial(g(\beta))}{\partial\beta} \\ &= \ldots  \end{aligned}$$
+- I dropped this path since there is an easier one:
+  - Due to [mse](https://math.stackexchange.com/a/189436).
+  - Let $Q(x) = x^T A x$ for some matrix $A$. (note that $Q(x)$ is a scalar.)
+  - $Q(x+h)-Q(x) = (x+h)^T A (x+h) - x^T A x = x^TAx + x^TAh + h^TAx + h^TAx + h^TAh - x^TAx$ so after simplyfing we get $Q(x+h) - Q(x) = x^TAh + h^TAx + Q(h) = x^TAh + x^TA^Th + Q(h) \approx x^T(A+ A^T)h$ hence $\frac{\partial Q(x)}{\partial x} = x^T(A+A^T)$.
+  - Since $X^TX$ is symmetric we have $\frac{\partial(\beta ^ T X^T X \beta)}{\partial\beta} = \beta^T (X^TX + XX^T) = 2 \beta^T (X^TX)$ and in denominator layout notation: $\frac{\partial(\beta ^ T X^T X \beta)}{\partial\beta} = (2 \beta^T (X^TX)) ^ T = 2 (X^TX) \beta$. 
 
 </details>
 <hr>
