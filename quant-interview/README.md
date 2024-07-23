@@ -23,9 +23,7 @@ where $n$ is the number of observations and $p < n$ is the number of coefficient
 - $Y$ is the dependent variable or response 
 - $X$ is the independent variable or predictor or feature
 
-$$
-2+2 =4
-$$
+$$2+2=4$$
 
 $$
   \begin{bmatrix}
