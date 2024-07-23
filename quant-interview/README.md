@@ -23,7 +23,7 @@ where $n$ is the number of observations and $p < n$ is the number of coefficient
 - $Y$ is the dependent variable or response 
 - $X$ is the independent variable or predictor or feature
 
-$$
+```math
   \begin{bmatrix}
   y_1\\
   y_2\\
@@ -55,7 +55,7 @@ $$
   \vdots\\
   e_n
   \end{bmatrix}
-$$
+```
 
 so in matrix form: $Y = X \beta + e$. The *Ordinary Least Squares* method wishes to find parameters $\beta = (\beta_{1}, \beta_{2} \ldots \beta_{p})^T$ that minimize the norm of the vector of residuals $e = (e_1, \ldots e_n)^T$.
 
